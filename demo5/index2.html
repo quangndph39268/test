@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="myctrl">
+        <ul>
+            <li>Ho ten: {{student.fullname}} </li>
+            <li>Ngay sinh: {{student.ngaysinh}}</li>
+            <li>Gioi tinh: {{student.gioitinh}}</li>
+            <li>Diem trung binh: {{student.diemtb}}</li>
+            <img src="{{student.photo}}"/>
+
+        </ul>
+    </div>
+    <script>
+        angular.module("myapp",[]).controller("myctrl",function($scope){
+            $scope.student = {
+                fullname: "Nguyen Van An",
+                ngaysinh: "11/11/2011",
+                gioitinh: "Nam",
+                diemtb: 5.5,
+                photo: "a.png"
+            };
+        });
+    </script>
+</body>
+</html>
