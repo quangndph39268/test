@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    input.ng-invalid{
+      background-color: red;
+    }
+  </style>
+  <body>
+      <div class="container" ng-app="myapp" ng-controller="myctrl">
+        <form action="" method="post" name="frm">
+            <div class="card-columns" style="column-count: 2;">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">From</h4>
+
+                        <div class="panel panel-default">
+                            <div class="panel-header">
+                                <h2>Thong tin sinh vien</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                  <label for="">Ho va ten</label>
+                                  <input type="text"
+                                    class="form-control" required maxlength="25" ng-model="fullname" name="txtFullname" id="" aria-describedby="helpId" placeholder="">
+                                    <span ng-show="frm.txtFullname.$invalid">Ho ten ko dc de trong</span>
+                                    <label for="">Diem</label>
+                                  <input type="number"
+                                    class="form-control" required min="0" max="10" ng-model="mark" name="txtMark" id="" aria-describedby="helpId" placeholder="">
+                                    <span ng-show="frm.txtMark.$invalid">Diem ko dc de trong, nam trong khoang 0->10</span>
+                                    <label for="">Email</label>
+                                  <input type="email"
+                                    class="form-control" required ng-model="email" name="txtEmail" id="" aria-describedby="helpId" placeholder="">
+                                    <span ng-show="frm.txtEmail.$invalid">email ko dung dinh dang</span>
+                                    <label for="">So xe</label>
+                                  <input type="number"
+                                    class="form-control" required name="" id="" aria-describedby="helpId" placeholder="">
+                                </div>
+
+                                <button type="button" class="btn btn-primary">Luu</button>
+                            </div>
+                            <div class="panel-footer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+        <span ng-show="frm..$invalid">
+         form hop le
+        </span>
+      </div>
+      <script>
+        var app=angular.module("myapp",[]);
+        app.controller("myctrl",function($scope){
+           
+            
+        });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
